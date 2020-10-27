@@ -1,6 +1,5 @@
-var carros = [{ id: 1, idMarca: 1, logoCarro: "imgCarros/mazda1.jpeg", modelo: "cx-30", precio: "$110'000.000" },
-{ id: 2, idMarca: 1, logoCarro: "imgCarros/mazda1.jpeg", modelo: "cx-30", precio: "$110'000.000" },
-{ id: 3, idMarca: 1, logoCarro: "imgCarros/mazda1.jpeg", modelo: "cx-30", precio: "$110'000.000" }];
+var carros = [];
+
 traerCarros()
 function traerCarros(){
     $.ajax({
@@ -8,8 +7,9 @@ function traerCarros(){
         url: '/cgi-bin/carrosServidor/main.py',
         dataType:"json",
         success: function(rta){
-        console.log(rta)
         console.log(JSON.stringify(rta))
+        carros = rta;
+        console.log(carros)
         },
         error: function(rta){
         console.log(JSON.stringify(rta))
