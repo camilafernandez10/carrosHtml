@@ -10,6 +10,7 @@ function traerCarros(){
         console.log(rta[0].idMarca)
         carros = rta;
         console.log(carros)
+        cargarCarros();
         },
         error: function(rta){
         console.log(JSON.stringify(rta))
@@ -20,7 +21,6 @@ function traerCarros(){
 
 var idmar = getCookie("idmar");
 
-cargarCarros();
 
 function cargarCarros() {
     console.log(carros)
