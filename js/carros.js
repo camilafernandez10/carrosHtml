@@ -8,7 +8,7 @@ function traerCarros(){
         dataType:"json",
         success: function(rta){
         console.log(JSON.stringify(rta))
-        carros = rta;
+        carros = JSON.parse(rta.data);
         console.log(carros.idMarca)
         },
         error: function(rta){
