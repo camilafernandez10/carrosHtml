@@ -9,6 +9,10 @@ function traerCarros(){
         success: function(rta){
         console.log(rta[0].idMarca)
         carros = rta
+        for (var i = 0; i < rta.length; i++) {
+                carros.push(rta[i]);
+
+        }
         console.log(carros)
         },
         error: function(rta){
