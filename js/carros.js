@@ -7,7 +7,7 @@ function traerCarros(){
         url: '/cgi-bin/carrosServidor/main.py',
         dataType:"json",
         success: function(rta){
-        console.log(rta)
+        console.log(rta[0].idMarca)
         carros = rta
         console.log(carros)
         },
