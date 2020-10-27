@@ -9,7 +9,7 @@ function traerCarros(){
         success: function(rta){
         console.log(JSON.stringify(rta))
         carros = JSON.stringify(rta);
-        console.log(carros)
+        console.log(carros.idMarca)
         },
         error: function(rta){
         console.log(JSON.stringify(rta))
