@@ -5,7 +5,7 @@ traerCarros()
 function traerCarros(){
     $.ajax({
         method: 'GET',
-        url: '/usr/lib/cgi-bin/carrosServidor/main.py',
+        url: '/cgi-bin/carrosServidor/main.py',
         dataType:"json",
         success: function(rta){
         console.log(rta)
