@@ -8,7 +8,7 @@ function traerCarros(){
         dataType:"json",
         success: function(rta){
         console.log(rta[0].idMarca)
-        carros = rta
+        carros = rta;
         console.log(carros)
         },
         error: function(rta){
@@ -23,7 +23,7 @@ var idmar = getCookie("idmar");
 cargarCarros();
 
 function cargarCarros() {
-
+    console.log(carros)
     for (var i = 0; i < carros.length; i++) {
         if (parseInt(carros[i].idMarca) === parseInt(idmar)) {
             colocarCard(carros[i], idmar);
