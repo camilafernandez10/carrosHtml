@@ -1,12 +1,24 @@
-var marcas=[{id:1,nombreMarca:"Mazda",logoMarca:"img/Lmazda.png"},
-{id:2,nombreMarca:"Chevrolet",logoMarca:"img/Lchevrolet.jpg"},
-{id:3,nombreMarca:"Mercedez",logoMarca:"img/Lmercedes.jpg"},
-{id:4,nombreMarca:"Audi",logoMarca:"img/Laudi.jpg"},
-{id:5,nombreMarca:"Maserati",logoMarca:"img/Lmaserati.jpg"}];
+var marcas=[];
+traerMarcas()
 
-var carros=[{id:1,idMarca:1,logoCarro:"imgCarros/mazda1.jpeg",modelo:"cx-30",precio:"$110'000.000"}];
-listaMarcas();
 
+function traerMarcas(){
+    $.ajax({
+        method: 'GET',
+        url: '/cgi-bin/carrosServidor/main.py',
+        dataType:"json",
+        success: function(rta){
+		if(rta.tipo === "marca"){
+        marcas = rta.arreglo;
+		listaMarcas();
+		}
+        },
+        error: function(rta){
+        console.log(JSON.stringify(rta))
+        }
+    });
+
+}
 
 $("#tarjetas").on("click", ".link.card", function(){
     var idmar = $(this).prop("id");
@@ -14,6 +26,7 @@ $("#tarjetas").on("click", ".link.card", function(){
 	window.location.assign("carros.html");
    
 });
+
 
 function listaMarcas(){
 	var texto = '<table class="ui inverted purple table">'+
