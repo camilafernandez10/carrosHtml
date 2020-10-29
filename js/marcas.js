@@ -8,6 +8,7 @@ function traerMarcas(){
         url: '/cgi-bin/carrosServidor/main.py',
         dataType:"json",
         success: function(rta){
+		console.log(rta)
 		if(rta.tipo === "marca"){
         marcas = rta.arreglo;
 		listaMarcas();
