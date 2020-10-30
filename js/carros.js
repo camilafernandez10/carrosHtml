@@ -41,7 +41,7 @@ function colocarCard(carro, idmar) {
         '<img src="' + carro.logoCarro + '">' +
         '</div>' +
         '<div class="content">' +
-        '<a class="header">' + carro.modelo+ '</a>'+
+        '<a class="header">' + carro.modelo + '</a>'+
         '<span class="meta">Precio: </span>' +
         '<span class="right floated">' +
         '<i class="heart outline like icon"></i>' +
