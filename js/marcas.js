@@ -5,14 +5,12 @@ traerMarcas()
 function traerMarcas(){
     $.ajax({
         method: 'GET',
-        url: '/cgi-bin/carrosServidor/main.py',
+        url: '/cgi-bin/carrosServidor/main2.py',
         dataType:"json",
         success: function(rta){
 		console.log(rta)
-		if(rta.tipo === "marca"){
-        marcas = rta.arreglo;
+        marcas = rta;
 		listaMarcas();
-		}
         },
         error: function(rta){
         console.log(JSON.stringify(rta))
