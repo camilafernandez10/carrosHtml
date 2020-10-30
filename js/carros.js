@@ -33,8 +33,6 @@ function cargarCarros() {
 }
 
 function colocarCard(carro, idmar) {
-
- 
     var texto = '<div class="ui link card product">' +
 
         '<div class="image">' +
