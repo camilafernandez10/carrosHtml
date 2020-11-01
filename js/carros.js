@@ -28,7 +28,7 @@ function cargarCarros() {
         if (parseInt(carros[i].idMarca) === parseInt(idmar)) {
             colocarCard(carros[i], idmar);
         } else {
-            
+            colocarCard(carros[i], idmar);
         }
     }
 }
