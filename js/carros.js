@@ -27,7 +27,7 @@ function cargarCarros() {
     for (var i = 0; i < carros.length; i++) {
         if (parseInt(carros[i].idMarca) === parseInt(idmar)) {
             colocarCard(carros[i], idmar);
-        } else if(parseInt(idmar) === null){
+        } else if(parseInt(idmar) === NaN){
             colocarCard(carros[i], idmar);
         }
     }
