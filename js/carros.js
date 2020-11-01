@@ -23,11 +23,11 @@ var idmar = getCookie("idmar");
 
 
 function cargarCarros() {
-    console.log(idmar);
+    console.log(parseInt(idmar));
     for (var i = 0; i < carros.length; i++) {
         if (parseInt(carros[i].idMarca) === parseInt(idmar)) {
             colocarCard(carros[i], idmar);
-        } else {
+        } else if(parseInt(idmar) === null){
             colocarCard(carros[i], idmar);
         }
     }
