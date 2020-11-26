@@ -10,7 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <body>
-
+    <div id="app">
     <div id="menu" class="ui inverted massive black fixed menu">
 
         <div class="ui simple dropdown item">
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div id="content" class="ui grid">
+    <div id="content1" class="ui grid">
         <div class="one wide column">
 
         </div>
@@ -45,9 +45,31 @@
             </div>
         </div>
     </div>
-
-
+    <button class="ui primary button" v-on:click="f">Aceptar</button>
+    </div>
 </body>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            datos: null,
+            motor: null,
+            color:null,
+        },
+        methods: {
+            f: function () {
+                axios.get('http://localhost:5000/ping')
+                    .then(response => {
+                        this.datos = response.data;
+                        console.log( this.datos);
+                    })
+                    .catch(error => console.error(error));
+            },
+        }
+    })
+</script>
 <script type="text/javascript" src="js/marcas.js"></script>
 <script type="text/javascript" src="js/carros.js" ></script>
 <script type="text/javascript" src="js/semantic.min.js"></script>
