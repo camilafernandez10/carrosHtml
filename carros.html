@@ -61,7 +61,7 @@
         },
         methods: {
             f: function () {
-                axios.get('http://localhost:5000//cgi-bin/carrosServidor/ping')
+                axios.get('http://localhost:5000/ping')
                     .then(response => {
                         this.datos = response.data;
                         console.log( this.datos);
