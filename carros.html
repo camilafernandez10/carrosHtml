@@ -51,7 +51,10 @@
 </body>
 
 <script>
-
+    $("#tarjetasCarros").on("click", ".link.card", function(){
+    var idcar = $(this).prop("id");
+	console.log(idcar)
+});
     var app = new Vue({
         el: '#app',
         data: {
