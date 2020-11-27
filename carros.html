@@ -61,8 +61,8 @@
         },
         methods: {
             f: function () {
-                const url = 'http://ec2-54-237-50-62.compute-1.amazonaws.com:5000/';
-                axios.get(url + 'ping')
+                url = 'http://ec2-54-237-50-62.compute-1.amazonaws.com:5000/';
+                axios.get(url+'ping')
                     .then(response => {
                         this.datos = response.data;
                         console.log( this.datos);
@@ -73,9 +73,14 @@
                     console.log(id);
                     //document.getElementById('usuario').style.display = 'block';
                     //document.getElementById('lista').style.display = 'none';
-                    axios.get(url)
+                    axios.get('https://reqres.in/api/users/' + id)
                         .then(response => {
-                        
+                            this.usuario = response.data.data;
+                            this.nombre=this.usuario.first_name;
+                            this.apellido=this.usuario.last_name;
+                            this.email=this.usuario.email;
+                            this.avatar=this.usuario.avatar;
+                            console.log(`GET list users`, this.usuario);
                         })
                         .catch(error => console.error(error));
                 }
