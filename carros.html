@@ -61,13 +61,24 @@
         },
         methods: {
             f: function () {
-                axios.get('http://ec2-18-210-17-254.compute-1.amazonaws.com:5000/ping')
+                const url = 'http://ec2-18-210-17-254.compute-1.amazonaws.com:5000';
+                axios.get(url+"/ping")
                     .then(response => {
                         this.datos = response.data;
                         console.log( this.datos);
                     })
                     .catch(error => console.error(error));
             },
+            s: function (id) {
+                    console.log(id);
+                    //document.getElementById('usuario').style.display = 'block';
+                    //document.getElementById('lista').style.display = 'none';
+                    axios.get(url)
+                        .then(response => {
+                        
+                        })
+                        .catch(error => console.error(error));
+                }
         }
     })
 </script>
