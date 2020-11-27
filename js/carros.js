@@ -34,7 +34,8 @@ function cargarCarros() {
 }
 
 function colocarCard(carro, idmar) {
-    var texto = '<div class="ui link card product">' +
+    console.log(carro.id)
+    var texto = '<div id='+carro.id+'class="ui link card product">' +
         '<div class="image">' +
         '<img src="' + carro.logoCarro + '">' +
         '</div>' +
