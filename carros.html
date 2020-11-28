@@ -56,12 +56,11 @@
         el: '#app',
         data: {
             datos: null,
-            motor: null,
-            color:null,
+            caract: null
         },
         methods: {
             f: function () {
-                url = 'http://ec2-100-25-26-47.compute-1.amazonaws.com:5000/';
+                url = 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/';
                 axios.get(url+'ping')
                     .then(response => {
                         this.datos = response.data;
@@ -73,17 +72,19 @@
                     console.log(id);
                     //document.getElementById('usuario').style.display = 'block';
                     //document.getElementById('lista').style.display = 'none';
-                    axios.get('https://reqres.in/api/users/' + id)
+                    axios.get(url+'caract')
                         .then(response => {
-                         
-                            console.log(`GET list users`, this.usuario);
+                            this.caract =response.data.caract;
+                            console.log(this.caract);
                         })
                         .catch(error => console.error(error));
                 }
         }
     })
+
     $("#tarjetasCarros").on("click", ".link.card", function(){
     var idcar = $(this).prop("id");
+    s(id);
 	
    
 });
