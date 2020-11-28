@@ -69,8 +69,8 @@
                     })
                     .catch(error => console.error(error));
             },
-            s: function (id) {
-                console.log(id);
+            s: function () {
+                console.log();
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
                 axios.get(url + 'caract')
@@ -82,7 +82,7 @@
             }
         },
         created() {
-            this.s(idcar);
+            this.s();
         },
     })
 
