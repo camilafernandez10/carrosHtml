@@ -57,12 +57,14 @@
         el: '#app',
         data: {
             datos: null,
-            caract: null
+            caract: null,
+            url: 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/'
         },
         methods: {
+            
             f: function () {
                 url = 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/';
-                axios.get(url + 'ping')
+                axios.get(this.url + 'ping')
                     .then(response => {
                         this.datos = response.data;
                         console.log(this.datos);
@@ -73,7 +75,7 @@
                 console.log();
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
-                axios.get(url + 'caract')
+                axios.get(this.url + 'caract')
                     .then(response => {
                         this.caract = response.data.caract;
                         console.log(this.caract);
