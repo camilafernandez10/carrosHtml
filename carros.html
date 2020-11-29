@@ -71,8 +71,9 @@
                     .catch(error => console.error(error));
             },
             s: function () {
+                var idcar
                 $("#tarjetasCarros").on("click", ".link.card", function () {
-                    var idcar = $(this).prop("id");
+                    idcar = $(this).prop("id");
                 });
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
