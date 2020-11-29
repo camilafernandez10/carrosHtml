@@ -13,6 +13,7 @@
 
 <body>
     <div id="app">
+
         <div id="menu" class="ui inverted massive black fixed menu">
 
             <div class="ui simple dropdown item">
@@ -47,12 +48,55 @@
                 </div>
             </div>
         </div>
-        <button class="ui primary button" v-on:click="s">Aceptar</button>
+        
+        <div id="content2" class="ui grid">
+            <div id="botones" class="seven ui buttons">
+                </br>
+                <button id="btnVentilacion" class="ui inverted black button">Motor</button>
+                <button id="btnNum_Computadores" class="ui inverted black button">Cantidad de Computadores</button>
+                <button id="btnProyector" class="ui inverted black button">Proyector</button>
+                <button id="btnTelevisor" class="ui inverted black button">Televisor</button>
+                <button id="btnToma_Corriente" class="ui inverted black button">Toma Corriente</button>
+                <button id="btnTablero" class="ui inverted black button">Tablero</button>
+                <button id="btnSilla" class="ui inverted black button">Sillas</button>
+                </button>
+            </div>
+        </div>
+        <div class="caracteristicas">
+            <div id="ventilacion"></div>
+            <div id="num_computadores">
+            </div>
+            <div id="proyector">
+
+            </div>
+            <div id="televisor">
+
+            </div>
+            <div id="toma_corriente">
+
+            </div>
+            <div id="tablero">
+
+            </div>
+            <div id="silla">
+
+            </div>
+        </div>
+        <div id="tablaSalones">
+            <h1>Horario del salon</h1>
+            <table id="tabla">
+                <caption>Salon </caption>
+
+            </table>
+        </div>
+    </div>
+
+
     </div>
 </body>
 
 <script>
-
+document.getElementById('content2').style.display = 'none';
     var app = new Vue({
         el: '#app',
         data: {
@@ -75,8 +119,8 @@
                 $("#tarjetasCarros").on("click", ".link.card", function () {
                     idcar = $(this).prop("id");
                 });
-                //document.getElementById('usuario').style.display = 'block';
-                //document.getElementById('lista').style.display = 'none';
+                document.getElementById('content2').style.display = 'block';
+                document.getElementById('content1').style.display = 'none';
                 axios.get(this.url + 'caract')
                     .then(response => {
                         this.caract = response.data.caract;
