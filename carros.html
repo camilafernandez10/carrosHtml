@@ -103,6 +103,7 @@
     var app = new Vue({
         el: '#app',
         data: {
+            idcar2: idcar,
             datos: null,
             caract: null,
             motor: null,
@@ -125,7 +126,7 @@
                         console.log(response.data);
                         console.log(this.caract);
                         for (var i = 0; i < this.caract.length; i++) {
-                            if (parseInt(this.caract[i].id) === parseInt(idcar)) {
+                            if (parseInt(this.caract[i].id) === parseInt(this.idcar2)) {
                                 this.motor = this.caract[i].motor
                             }
 
