@@ -43,7 +43,7 @@
             <div class="one wide column">
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards" >
+                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="mostrar" >
                 </div>
             </div>
         </div>
@@ -96,10 +96,7 @@
 
 <script>
     document.getElementById('content2').style.display = 'none';
-    $("#tarjetasCarros").on("click", ".link.card", function () {
-        var idcar = $(this).prop("id");
-        console.log(idcar)
-    });
+ 
     var app = new Vue({
         el: '#app',
         data: {
