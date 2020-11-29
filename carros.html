@@ -74,7 +74,6 @@
                 $("#tarjetasCarros").on("click", ".link.card", function () {
                 var idcar = $(this).prop("id");
                 });
-
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
                 axios.get(this.url + 'caract')
@@ -82,7 +81,7 @@
                         this.caract = response.data.caract;
                         console.log(response.data);
                         console.log(this.caract);
-                        console.log(this.caract[0].motor);
+                        console.log(this.caract[idcar].motor);
                   
                     })
                     .catch(error => console.error(error));
