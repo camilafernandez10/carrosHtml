@@ -96,7 +96,7 @@
 
 <script>
     document.getElementById('content2').style.display = 'none';
- 
+    var idcar;
     var app = new Vue({
         el: '#app',
         data: {
@@ -139,7 +139,7 @@
         },
     })
     $("#tarjetasCarros").on("click", ".link.card", function () {
-        var idcar = $(this).prop("id");
+        idcar = $(this).prop("id");
         console.log(idcar)
     });
 </script>
