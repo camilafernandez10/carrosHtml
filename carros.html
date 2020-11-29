@@ -43,7 +43,7 @@
             <div class="one wide column">
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s">
+                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s($event)">
                 </div>
             </div>
         </div>
@@ -97,13 +97,14 @@
 <script>
     document.getElementById('content2').style.display = 'none';
     var idcar
-                $("#tarjetasCarros").on("click", ".link.card", function () {
-                    idcar = $(this).prop("id");
-                });
+    $("#tarjetasCarros").on("click", ".link.card", function () {
+        idcar = $(this).prop("id");
+
+    });
     var app = new Vue({
         el: '#app',
         data: {
-            idcar2: idcar,
+            idcar: null,
             datos: null,
             caract: null,
             motor: null,
@@ -118,7 +119,8 @@
                     })
                     .catch(error => console.error(error));
             },
-            s: function () {
+            s: function (event) {
+                idcar = event.currentTarget.link.card
                 console.log(idcar)
                 axios.get(this.url + 'caract')
                     .then(response => {
@@ -136,8 +138,8 @@
 
                     })
                     .catch(error => console.error(error));
-               // document.getElementById('content2').style.display = 'block';
-               // document.getElementById('content1').style.display = 'none';
+                // document.getElementById('content2').style.display = 'block';
+                // document.getElementById('content1').style.display = 'none';
             }
         },
         created() {
