@@ -96,6 +96,10 @@
 
 <script>
     document.getElementById('content2').style.display = 'none';
+    var idcar
+                $("#tarjetasCarros").on("click", ".link.card", function () {
+                    idcar = $(this).prop("id");
+                });
     var app = new Vue({
         el: '#app',
         data: {
@@ -114,10 +118,6 @@
                     .catch(error => console.error(error));
             },
             s: function () {
-                var idcar
-                $("#tarjetasCarros").on("click", ".link.card", function () {
-                    idcar = $(this).prop("id");
-                });
                 console.log(idcar)
                 axios.get(this.url + 'caract')
                     .then(response => {
