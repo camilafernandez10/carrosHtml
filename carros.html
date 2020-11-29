@@ -72,12 +72,11 @@
                     .catch(error => console.error(error));
             },
             s: function () {
-                console.log();
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
                 axios.get(this.url + 'caract')
                     .then(response => {
-                        this.caract = response.data.caract;
+                        this.caract = response.data;
                         console.log(this.caract);
                     })
                     .catch(error => console.error(error));
