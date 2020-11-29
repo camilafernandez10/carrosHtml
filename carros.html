@@ -141,6 +141,10 @@
             this.f();
         },
     })
+    $("#tarjetasCarros").on("click", ".link.card", function () {
+        var idcar = $(this).prop("id");
+        console.log(idcar)
+    });
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
 <script type="text/javascript" src="js/carros.js"></script>
