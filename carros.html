@@ -116,7 +116,7 @@
             },
             
             mostrar:function() {
-                console.log(idcar)
+                document.getElementById('content2').style.display = 'block';
                 axios.get(this.url + 'caract')
                     .then(response => {
                         this.caract = response.data.caract;
@@ -130,8 +130,7 @@
                         console.log(this.motor);
                     })
                     .catch(error => console.error(error));
-                document.getElementById('content2').style.display = 'block';
-                document.getElementById('content1').style.display = 'none';
+              
             }
         },
         created() {
