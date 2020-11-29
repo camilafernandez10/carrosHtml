@@ -77,7 +77,7 @@
                 axios.get(this.url + 'caract')
                     .then(response => {
                         this.caract = response.data.caract;
-                        console.log(response.data);
+                        console.log(this.caract);
                         this.motor=this.caract.motor
                         console.log(this.motor)
                     })
