@@ -43,7 +43,7 @@
 
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards">
+                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s" >
                 </div>
             </div>
         </div>
@@ -67,11 +67,14 @@
                 axios.get(this.url + 'ping')
                     .then(response => {
                         this.datos = response.data;
-                        console.log(this.datos);
                     })
                     .catch(error => console.error(error));
             },
             s: function () {
+                $("#tarjetasCarros").on("click", ".link.card", function () {
+                var idcar = $(this).prop("id");
+                });
+
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
                 axios.get(this.url + 'caract')
@@ -80,22 +83,15 @@
                         console.log(response.data);
                         console.log(this.caract);
                         console.log(this.caract[0].motor);
-                        this.motor=this.caract.motor
-                        console.log(this.motor)
+                  
                     })
                     .catch(error => console.error(error));
             }
         },
         created() {
-            this.s();
+            this.f();
         },
     })
-
-
-    $("#tarjetasCarros").on("click", ".link.card", function () {
-        var idcar = $(this).prop("id");
-
-    });
 
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
