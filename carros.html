@@ -43,7 +43,7 @@
 
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s" >
+                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s">
                 </div>
             </div>
         </div>
@@ -58,11 +58,11 @@
         data: {
             datos: null,
             caract: null,
-            motor:null,
+            motor: null,
             url: 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/'
         },
         methods: {
-            
+
             f: function () {
                 axios.get(this.url + 'ping')
                     .then(response => {
@@ -72,7 +72,7 @@
             },
             s: function () {
                 $("#tarjetasCarros").on("click", ".link.card", function () {
-                var idcar = $(this).prop("id");
+                    var idcar = $(this).prop("id");
                 });
                 //document.getElementById('usuario').style.display = 'block';
                 //document.getElementById('lista').style.display = 'none';
@@ -81,8 +81,15 @@
                         this.caract = response.data.caract;
                         console.log(response.data);
                         console.log(this.caract);
-                        console.log(this.caract[idcar].motor);
-                  
+                        for (var i = 0; i < this.caract.length; i++) {
+                            if (parseInt(this.caract[i].id) === parseInt(idcar)) {
+                                this.motor = this.caract[i].motor
+                            }
+
+
+                        }
+                        console.log(this.motor);
+
                     })
                     .catch(error => console.error(error));
             }
