@@ -114,7 +114,8 @@
                     })
                     .catch(error => console.error(error));
             },
-            mostrar (idcar) {
+            
+            mostrar:function(idcar) {
                 console.log(idcar)
                 axios.get(this.url + 'caract')
                     .then(response => {
@@ -125,11 +126,8 @@
                             if (parseInt(this.caract[i].id) === parseInt(idcar)) {
                                 this.motor = this.caract[i].motor
                             }
-
-
                         }
                         console.log(this.motor);
-
                     })
                     .catch(error => console.error(error));
                 // document.getElementById('content2').style.display = 'block';
@@ -140,13 +138,12 @@
             this.f();
         },
     })
-    $(document).ready(function () {
-        app.mostrar(idcar);
-    });
+  
     $("#tarjetasCarros").on("click", ".link.card", function () {
         idcar = $(this).prop("id");
-        document.app.mostar(idcar);
     });
+
+    console.log(carros)
 
 
 
