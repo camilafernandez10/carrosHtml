@@ -58,12 +58,12 @@
         data: {
             datos: null,
             caract: null,
+            motor:null,
             url: 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/'
         },
         methods: {
             
             f: function () {
-                url = 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/';
                 axios.get(this.url + 'ping')
                     .then(response => {
                         this.datos = response.data;
@@ -76,8 +76,10 @@
                 //document.getElementById('lista').style.display = 'none';
                 axios.get(this.url + 'caract')
                     .then(response => {
-                        this.caract = response.data;
+                        this.caract = response.data.caract;
                         console.log(this.caract);
+                        this.motor=this.caract.motor
+                        console.log(this.motor)
                     })
                     .catch(error => console.error(error));
             }
