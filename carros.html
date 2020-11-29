@@ -114,7 +114,7 @@
                     })
                     .catch(error => console.error(error));
             },
-            mostrar(idcar) {
+            mostrar: function (idcar) {
                 console.log(idcar)
                 axios.get(this.url + 'caract')
                     .then(response => {
