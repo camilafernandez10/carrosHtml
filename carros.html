@@ -43,7 +43,7 @@
             <div class="one wide column">
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards" >
+                <div id="tarjetasCarros" class="ui three stackable cards">
                 </div>
             </div>
         </div>
@@ -97,13 +97,9 @@
 <script>
     document.getElementById('content2').style.display = 'none';
     var idcar
-    $("#tarjetasCarros").on("click", ".link.card", function () {
-        idcar = $(this).prop("id");
-    });
     var app = new Vue({
         el: '#app',
         data: {
-            idcar:null,
             datos: null,
             caract: null,
             motor: null,
@@ -149,6 +145,15 @@
 
         },
     })
+    $(document).ready(function () {
+        app.s(idcar);
+    });
+    $("#tarjetasCarros").on("click", ".link.card", function () {
+        idcar = $(this).prop("id");
+        document.app.s(idcar);
+    });
+
+
 
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
