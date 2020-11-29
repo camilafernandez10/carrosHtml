@@ -58,7 +58,7 @@
         data: {
             datos: null,
             caract: null,
-            motor:null,
+            motor4:null,
             url: 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/'
         },
         methods: {
@@ -77,8 +77,8 @@
                 axios.get(this.url + 'caract')
                     .then(response => {
                         this.caract = response.data.caract;
-                        console.log(this.caract);
-                        this.motor=this.caract.motor
+                        console.log(this.caract.motor);
+                        this.motor4=this.caract.motor
                         console.log(this.motor)
                     })
                     .catch(error => console.error(error));
