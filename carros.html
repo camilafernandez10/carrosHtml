@@ -114,7 +114,7 @@
                     })
                     .catch(error => console.error(error));
             },
-            s: function (idcar) {
+            mostrar: function (idcar) {
                 console.log(idcar)
                 axios.get(this.url + 'caract')
                     .then(response => {
@@ -138,19 +138,14 @@
         },
         created() {
             this.f();
-            $("#tarjetasCarros").on("click", ".link.card", function () {
-                idcar = $(this).prop("id");
-                this.s(idcar)
-            });
-
         },
     })
     $(document).ready(function () {
-        app.s(idcar);
+        app.mostrar(idcar);
     });
     $("#tarjetasCarros").on("click", ".link.card", function () {
         idcar = $(this).prop("id");
-        document.app.s(idcar);
+        document.app.mostar(idcar);
     });
 
 
