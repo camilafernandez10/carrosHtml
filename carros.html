@@ -99,7 +99,7 @@
     var idcar
     $("#tarjetasCarros").on("click", ".link.card", function () {
         idcar = $(this).prop("id");
-    
+    });
     const app = new Vue({
         el: '#app',
         data: {
@@ -141,10 +141,6 @@
             this.f();
         },
     })
-    });
-
-
-
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
 <script type="text/javascript" src="js/carros.js"></script>
