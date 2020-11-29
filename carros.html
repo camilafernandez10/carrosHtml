@@ -43,7 +43,7 @@
             <div class="one wide column">
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s($event)">
+                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="s()">
                 </div>
             </div>
         </div>
@@ -99,53 +99,51 @@
     var idcar
     $("#tarjetasCarros").on("click", ".link.card", function () {
         idcar = $(this).prop("id");
-
-    });
-    var app = new Vue({
-        el: '#app',
-        data: {
-            idcar: null,
-            datos: null,
-            caract: null,
-            motor: null,
-            url: 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/'
-        },
-        methods: {
-
-            f: function () {
-                axios.get(this.url + 'ping')
-                    .then(response => {
-                        this.datos = response.data;
-                    })
-                    .catch(error => console.error(error));
+        var app = new Vue({
+            el: '#app',
+            data: {
+                idcar: null,
+                datos: null,
+                caract: null,
+                motor: null,
+                url: 'http://ec2-34-227-92-74.compute-1.amazonaws.com:5000/'
             },
-            s: function (event) {
-                idcar = event.currentTarget.link.card
-                console.log(idcar)
-                axios.get(this.url + 'caract')
-                    .then(response => {
-                        this.caract = response.data.caract;
-                        console.log(response.data);
-                        console.log(this.caract);
-                        for (var i = 0; i < this.caract.length; i++) {
-                            if (parseInt(this.caract[i].id) === parseInt(this.idcar2)) {
-                                this.motor = this.caract[i].motor
+            methods: {
+
+                f: function () {
+                    axios.get(this.url + 'ping')
+                        .then(response => {
+                            this.datos = response.data;
+                        })
+                        .catch(error => console.error(error));
+                },
+                s: function () {
+                    console.log(idcar)
+                    axios.get(this.url + 'caract')
+                        .then(response => {
+                            this.caract = response.data.caract;
+                            console.log(response.data);
+                            console.log(this.caract);
+                            for (var i = 0; i < this.caract.length; i++) {
+                                if (parseInt(this.caract[i].id) === parseInt(this.idcar)) {
+                                    this.motor = this.caract[i].motor
+                                }
+
+
                             }
+                            console.log(this.motor);
 
-
-                        }
-                        console.log(this.motor);
-
-                    })
-                    .catch(error => console.error(error));
-                // document.getElementById('content2').style.display = 'block';
-                // document.getElementById('content1').style.display = 'none';
-            }
-        },
-        created() {
-            this.f();
-        },
-    })
+                        })
+                        .catch(error => console.error(error));
+                    // document.getElementById('content2').style.display = 'block';
+                    // document.getElementById('content1').style.display = 'none';
+                }
+            },
+            created() {
+                this.f();
+            },
+        })
+    });
 
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
