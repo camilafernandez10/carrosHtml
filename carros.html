@@ -118,6 +118,7 @@ document.getElementById('content2').style.display = 'none';
                 $("#tarjetasCarros").on("click", ".link.card", function () {
                     idcar = $(this).prop("id");
                 });
+                console.log(idcar)
                 document.getElementById('content2').style.display = 'block';
                 document.getElementById('content1').style.display = 'none';
                 axios.get(this.url + 'caract')
@@ -126,7 +127,7 @@ document.getElementById('content2').style.display = 'none';
                         console.log(response.data);
                         console.log(this.caract);
                         for (var i = 0; i < this.caract.length; i++) {
-                            if (parseInt(this.caract[i].id) === parseInt(idcar+1)) {
+                            if (parseInt(this.caract[i].id) === parseInt(idcar)) {
                                 this.motor = this.caract[i].motor
                             }
 
