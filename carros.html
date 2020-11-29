@@ -43,7 +43,7 @@
             <div class="one wide column">
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards">
+                <div id="tarjetasCarros" class="ui three stackable cards"  v-on:click="mostrar()">
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
                     .catch(error => console.error(error));
             },
             
-            mostrar:function(idcar) {
+            mostrar:function() {
                 console.log(idcar)
                 axios.get(this.url + 'caract')
                     .then(response => {
