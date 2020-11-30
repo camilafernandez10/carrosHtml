@@ -61,3 +61,73 @@ function colocarCard(carro, idmar) {
         '</div>';
     $("#tarjetasCarros").append(texto);
 }
+
+
+document.getElementById('content2').style.display = 'none';
+
+var idcar;
+var app = new Vue({
+    el: '#app',
+    data: {
+        datos: null,
+        caract: null,
+        motor: null,
+        color: null,
+        cilindraje: null,
+        potencia: null,
+        fullequipo: null,
+        traccion: null,
+        frenos: null,
+        seguridad: null,
+        url: 'http://ec2-54-237-54-201.compute-1.amazonaws.com:5000/'
+    },
+    methods: {
+
+        f: function () {
+            axios.get(this.url + 'ping')
+                .then(response => {
+                    this.datos = response.data;
+                })
+                .catch(error => console.error(error));
+        },
+
+        mostrar: function () {
+            document.getElementById('content2').style.display = 'block';
+            document.getElementById('content1').style.display = 'none';
+            axios.get(this.url + 'caract')
+                .then(response => {
+                    this.caract = response.data.caract;
+                    console.log(response.data);
+                    console.log(this.caract);
+                    for (var i = 0; i < this.caract.length; i++) {
+                        if (parseInt(this.caract[i].id) === parseInt(idcar)) {
+                            this.motor = this.caract[i].motor
+                            this.color = this.caract[i].color
+                            this.cilindraje = this.caract[i].cilindraje
+                            this.potencia = this.caract[i].potencia
+                            this.fullequipo = this.caract[i].fullequipo
+                            this.traccion = this.caract[i].traccion
+                            this.frenos = this.caract[i].frenos
+                            this.seguridad = this.caract[i].seguridad
+                        }
+                    }
+                })
+                .catch(error => console.error(error));
+
+        }
+    },
+    created() {
+        this.f();
+    },
+})
+$("#tarjetasCarros").on("click", ".link.card", function () {
+    idcar = $(this).prop("id");
+    img = $(this).prop("logoCarro");
+    modelo = $(this).prop("modelo");
+    precio = $(this).prop("precio");
+    console.log(idcar)
+    console.log(img)
+    console.log(modelo)
+    console.log(precio)
+    //colocarCard2(idcar, img, modelo, precio);
+});
