@@ -52,6 +52,7 @@ $("#btnSeguridad").click(function () {
 $("#btnVolver").click(function () {
     document.getElementById('content1').style.display = 'block';
     document.getElementById('content2').style.display = 'none';
+    document.getElementById('tarjetaCarro').style.display = 'none';
 });
 
 function mostrar_ocultar(id) {
