@@ -130,7 +130,7 @@ $("#tarjetasCarros").on("click", ".link.card", function () {
     }
 });
 
-function colocarCard(carro) {
+function colocarCard2(carro) {
     var texto = '<div id=' + carro.id + ' class="ui link card product">' +
         '<div class="image">' +
         '<img src="' + carro.logoCarro + '">' +
