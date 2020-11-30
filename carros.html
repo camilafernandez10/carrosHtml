@@ -90,38 +90,40 @@
                 </div>
             </div>
         </div>
-            <div id="content3" class="ui grid">
-                <div id="titulo" align='center'>
-                    Agenda tu test dirve
-                </div>
-                </br> </br>
-                <div id="tablaCarros">
-                    <form class="ui fluid form">
-                        <div class="ui divider"></div>
-                        <div class="inline field" align='center'>
-                            <select id="hora1" name="hora">
-                                <option value="07:00:00">07:00-09:00</option>
-                                <option value="09:00:00">09:00-11:00</option>
-                                <option value="11:00:00">11:00-13:00</option>
-                                <option value="14:00:00">14:00-16:00</option>
-                                <option value="16:00:00">16:00-18:00</option>
-                                <option value="18:00:00">18:00-20:00</option>
-                                <option value="20:00:00">20:00-22:00</option>
-                            </select>
-                            
-                                <input type="date" id="dia10" name="trip-start"
-                                value="2020-06-10"
-                                min="2020-06-01" max="2030-12-31">
-                            Ingresa el tema
-                            <input type="text" id="tema10"  > 
-        
-                        </div>
-                    </form>
-                    <div id="botones" class="seven ui buttons">
-                        <button id="btnVolver2" class="ui inverted black button" v-on:click="volver()">Volver</button>
-                        <button id="btnReservar" class="ui inverted black button">Realiza tu reserva</button>
+        <div id="content3" class="ui grid">
+            <div id="titulo" align='center'>
+                Agenda tu test dirve
+            </div>
+            </br> </br>
+            <div id="tablaCarros">
+                <form class="ui fluid form">
+                    <div class="ui divider"></div>
+                    <div class="inline field" align='center'>
+                        <select id="hora1" name="hora">
+                            <option value="07:00:00">07:00-09:00</option>
+                            <option value="09:00:00">09:00-11:00</option>
+                            <option value="11:00:00">11:00-13:00</option>
+                            <option value="14:00:00">14:00-16:00</option>
+                            <option value="16:00:00">16:00-18:00</option>
+                            <option value="18:00:00">18:00-20:00</option>
+                            <option value="20:00:00">20:00-22:00</option>
+                        </select>
+
+                        <input type="date" id="dia10" name="trip-start" value="2020-06-10" min="2020-06-01"
+                            max="2030-12-31">
+                        Ingresa el tema
+                        <input type="text" id="tema10">
+
                     </div>
+                </form>
+                </br>
+                <div id="tarjetaCarro" align='center' class="ui three stackable cards"></div>
+                </br>
+                <div id="botones" class="seven ui buttons">
+                    <button id="btnVolver2" class="ui inverted black button" v-on:click="volver()">Volver</button>
+                    <button id="btnReservar" class="ui inverted black button">Realiza tu reserva</button>
                 </div>
+            </div>
 
         </div>
     </div>
