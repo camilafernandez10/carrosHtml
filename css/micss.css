@@ -52,22 +52,24 @@ opacity: 95%;
 	width: 20%;
 	color: white;
 	float: right;
-	margin-top: 20%;
+	margin-top: 15%;
 	margin-left: 75%;
 	position: absolute;
 }
-.caracteristicas1{
+#content2{
 	font-family: 'PT Sans', sans-serif;
 	font-size: large;
 	font-style: normal;
   	font-weight: 400;
-	text-align: left;
 	width: 20%;
 	color: white;
-	float: right;
-	margin-top: 10%;
-	margin-left: 75%;
-	position: absolute;
+}
+
+#tablaCarros { 
+	border: 2px solid #000000; 
+	border-collapse: collapse; 
+	margin: auto; 
+    width: 80%; 
 }
 table{
 	opacity: 100%;
