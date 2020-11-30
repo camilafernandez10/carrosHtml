@@ -57,6 +57,7 @@ $("#btnVolver").click(function () {
     $('#tarjetaCarro').empty();
 });
 $("#btnReservar").click(function () {
+    document.getElementById('content3').style.display = 'block';
     $('#tarjetaCarro').empty();
 });
 
