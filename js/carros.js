@@ -156,5 +156,5 @@ function colocarCard2(carro) {
         '</div>' +
         '</div>' +
         '</div>';
-    $("#tarjetasCarros").append(texto);
+    $("#tarjetaCarro").append(texto);
 }
