@@ -72,7 +72,7 @@
             <div id="frenos">{{frenos}}</div>
             <div id="seguridad">{{seguridad}}</div>
         </div>
-    </br></br>
+        </br></br>
         <div id="tablaSalones">
             <h1>Automovil</h1>
             <div id="tarjetaCarro" class="ui three stackable cards"></div>
@@ -147,39 +147,40 @@
         img = $(this).prop("logoCarro");
         modelo = $(this).prop("modelo");
         precio = $(this).prop("precio");
-        colocarCard2(idcar,img,modelo,precio);
+        colocarCard2(idcar, img, modelo, precio);
     });
-
-    function colocarCard2(idcar,img,modelo,precio) {
-    var texto2 = '<div id='+ idcar + ' class="ui link card product">' +
-        '<div class="image">' +
-        '<img src="' + img + '">' +
-        '</div>' +
-        '<div class="content">' +
-        '<a class="header">' + modelo + '</a>'+
-        '<span class="meta">Precio: </span>' +
-        '<span class="right floated">' +
-        '<i class="heart outline like icon"></i>' +
-        '17 likes' +
-        '</span>' +
-        '<i class="dollar sign icon"></i>' +
-        precio +
-        '</div>' +
-        '<div class="extra content">' +
-        '<div class="ui large transparent left icon input">' +
-        '</div>' +
-        '<div class="ui vertical animated button" tabindex="0">' +
-        '<div class="hidden content">Añadir al carrito</div>' +
-        '<div class="visible content">' +
-        '<i class="shop icon"></i>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>';
-    $("#tarjetaCarro").append(texto2);
-}
+/*
+    function colocarCard2(idcar, img, modelo, precio) {
+        var texto2 = '<div id=' + idcar + ' class="ui link card product">' +
+            '<div class="image">' +
+            '<img src="' + img + '">' +
+            '</div>' +
+            '<div class="content">' +
+            '<a class="header">' + modelo + '</a>' +
+            '<span class="meta">Precio: </span>' +
+            '<span class="right floated">' +
+            '<i class="heart outline like icon"></i>' +
+            '17 likes' +
+            '</span>' +
+            '<i class="dollar sign icon"></i>' +
+            precio +
+            '</div>' +
+            '<div class="extra content">' +
+            '<div class="ui large transparent left icon input">' +
+            '</div>' +
+            '<div class="ui vertical animated button" tabindex="0">' +
+            '<div class="hidden content">Añadir al carrito</div>' +
+            '<div class="visible content">' +
+            '<i class="shop icon"></i>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+        $("#tarjetaCarro").append(texto2);
+    }
 
 </script>
+
 <script type="text/javascript" src="js/marcas.js"></script>
 <script type="text/javascript" src="js/carros.js"></script>
 <script type="text/javascript" src="js/actions.js"></script>
