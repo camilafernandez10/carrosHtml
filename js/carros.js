@@ -166,13 +166,18 @@ var app = new Vue({
                     console.log(this.rta)
                     let termino = "integer";
                     let termino2 = "Duplicate";
+                    let ter ="truncated"
                     let posicion = this.rta.indexOf(termino);
                     let posicion2 = this.rta.indexOf(termino2);
+                    let pos = this.rta.indexOf(ter);
                     if (posicion !== -1){
                         this.rta = "El dato de la cedula no es correcto"
                     }
                     if (posicion2 !== -1){
                         this.rta = "Ya tiene agendada una cita con su cedula"
+                    }
+                    if (pos !== -1){
+                        this.rta = "El dato de la cedula no es correcto"
                     }
                     if(this.rta === "None"){
                         this.rta = "Su test drive ha sido agendado correctamente"
