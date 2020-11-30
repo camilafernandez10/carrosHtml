@@ -91,16 +91,16 @@ var app = new Vue({
                 .catch(error => console.error(error));
         },
         volver: function () {
-            datos: null
-            caract: null
-            motor: null
-            color: null
-            cilindraje: null
-            potencia: null
-            fullequipo: null
-            traccion: null
-            frenos: null
-            seguridad: null
+            this.datos= null;
+            this.caract= null
+            this.motor= null
+            this.color= null
+            this.cilindraje= null
+            this.potencia= null
+            this.fullequipo=null
+            this.traccion= null
+            this.frenos= null
+            this.seguridad=null
         },
 
         mostrar: function () {
