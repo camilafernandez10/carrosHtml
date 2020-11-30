@@ -161,9 +161,8 @@ var app = new Vue({
                     console.log(response.data);
                     this.rta = response.data.message
                     console.log(this.rta)
-                    let cadena = "Este Era Un Gato Con Los Pies De Trapo";
                     let termino = "integer";
-                    let posicion = cadena.indexOf(termino);
+                    let posicion = this.rta.indexOf(termino);
                     if (posicion !== -1)
                         this.rta = "El dato de la cedula no es correcto"
                         
