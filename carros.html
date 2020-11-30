@@ -99,7 +99,7 @@
                 <form class="ui fluid form">
                     <div class="ui divider"></div>
                     <div class="inline field" align='center'>
-                        <select id="hora" name="hora">
+                        <select id="hora" name="hora" v-model="hora">
                             <option value="07:00:00">07:00-09:00</option>
                             <option value="09:00:00">09:00-11:00</option>
                             <option value="11:00:00">11:00-13:00</option>
@@ -109,10 +109,9 @@
                             <option value="20:00:00">20:00-22:00</option>
                         </select>
                         <input type="date" id="dia" name="trip-start" value="2020-06-10" min="2020-06-01"
-                            max="2030-12-31">
+                            max="2030-12-31" v-model="fecha">
                         Ingresa el tema
                         <input type="text" id="tema" v-model="coment">
-
                     </div>
                 </form>
                 </br></br>

@@ -80,8 +80,9 @@ var app = new Vue({
         traccion: null,
         frenos: null,
         seguridad: null,
+        hora:null,
+        fecha:null,
         coment: null,
-
         url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
     },
     methods: {
@@ -104,6 +105,8 @@ var app = new Vue({
             this.traccion = null
             this.frenos = null
             this.seguridad = null
+            this.hora=null
+            this.fecha=null
             this.coment = null
         },
 
@@ -137,6 +140,8 @@ var app = new Vue({
         },
         TestDrive() {
             const path = this.url + 'test';
+            console.log(this.hora);
+            console.log(this.fecha);
             const datos = {
                 coment: this.coment,
             };
