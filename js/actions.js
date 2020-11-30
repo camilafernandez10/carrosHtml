@@ -6,7 +6,7 @@ document.getElementById('fullequipo').style.display = 'none';
 document.getElementById('traccion').style.display = 'none';
 document.getElementById('frenos').style.display = 'none';
 document.getElementById('seguridad').style.display = 'none';
-document.getElementById('tarjetaCarro').style.display = 'none';
+
 
 
 $("#btnMotor").click(function () {
