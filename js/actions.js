@@ -61,7 +61,11 @@ $("#btnVolver2").click(function () {
     document.getElementById('content1').style.display = 'none';
     document.getElementById('content3').style.display = 'none';
 });
+$("#btnReservar").click(function () {
+    document.getElementById('content3').style.display = 'block';
+    document.getElementById('content2').style.display = 'none';
 
+});
 
 function mostrar_ocultar(id) {
     var elemento = document.getElementById(id);
