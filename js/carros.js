@@ -83,8 +83,8 @@ var app = new Vue({
         hora:null,
         fecha:null,
         coment: null,
-        idCliente = null,
-        idCarro = idcar,
+        idCliente : null,
+        idCarro : idcar,
         url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
     },
     methods: {
