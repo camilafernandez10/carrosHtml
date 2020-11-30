@@ -160,6 +160,7 @@ var app = new Vue({
                 .then(response => {
                     console.log(response.data);
                     this.rta = response.data.message
+                    console.log(this.rta)
                 })
                 .catch((error) => {
                     console.error(error);
