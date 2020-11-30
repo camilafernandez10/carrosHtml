@@ -83,6 +83,8 @@ var app = new Vue({
         hora:null,
         fecha:null,
         coment: null,
+        idCliente = 1,
+        idCarro = idcar,
         url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
     },
     methods: {
@@ -143,7 +145,12 @@ var app = new Vue({
             console.log(this.hora);
             console.log(this.fecha);
             const datos = {
+                idCliente:this.idCliente,
+                idCarro:this.idCarro,
+                hora:this.hora,
+                fecha:this.fecha,
                 coment: this.coment,
+
             };
             axios.post(path, datos)
                 .then(response => {
