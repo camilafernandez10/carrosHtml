@@ -64,7 +64,6 @@ function colocarCard(carro, idmar) {
 
 
 document.getElementById('content2').style.display = 'none';
-document.getElementById('content3').style.display = 'none';
 
 var idcar;
 var app = new Vue({
