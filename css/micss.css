@@ -43,7 +43,32 @@ opacity: 95%;
 	
 
 }
-
+.caracteristicas{
+	font-family: 'PT Sans', sans-serif;
+	font-size: large;
+	font-style: normal;
+  	font-weight: 400;
+	text-align: left;
+	width: 20%;
+	color: white;
+	float: right;
+	margin-top: 20%;
+	margin-left: 75%;
+	position: absolute;
+}
+.caracteristicas1{
+	font-family: 'PT Sans', sans-serif;
+	font-size: large;
+	font-style: normal;
+  	font-weight: 400;
+	text-align: left;
+	width: 20%;
+	color: white;
+	float: right;
+	margin-top: 10%;
+	margin-left: 75%;
+	position: absolute;
+}
 table{
 	opacity: 100%;
 }
