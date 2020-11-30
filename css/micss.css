@@ -17,7 +17,8 @@ footer{
 }
 
 body{
-	background-image: url("img3.jpg"); 
+	background-image: url("img3.jpg");
+	opacity: 90%;
 	background-repeat: repeat;
 	background-position: center;
 	position: relative;
