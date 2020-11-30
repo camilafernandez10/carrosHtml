@@ -122,6 +122,7 @@ var app = new Vue({
 })
 
 $("#tarjetasCarros").on("click", ".link.card", function () {
+    document.getElementById('tarjetaCarro').style.display = 'block';
     idcar = $(this).prop("id");
     for (var i = 0; i < carros.length; i++) {
         if (parseInt(carros[i].id) === parseInt(idcar)) {
