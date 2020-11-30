@@ -90,6 +90,18 @@ var app = new Vue({
                 })
                 .catch(error => console.error(error));
         },
+        volver: function () {
+            datos: null
+            caract: null
+            motor: null
+            color: null
+            cilindraje: null
+            potencia: null
+            fullequipo: null
+            traccion: null
+            frenos: null
+            seguridad: null
+        },
 
         mostrar: function () {
             document.getElementById('content2').style.display = 'block';
@@ -113,7 +125,6 @@ var app = new Vue({
                     }
                 })
                 .catch(error => console.error(error));
-
         }
     },
     created() {
