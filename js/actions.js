@@ -49,7 +49,10 @@ $("#btnSeguridad").click(function () {
     $('#fullequipo').hide(); $('#traccion').hide(); $('#frenos').hide(); $('#motor').hide();
 });
 
-
+$("#btnVolver").click(function () {
+    document.getElementById('content1').style.display = 'block';
+    document.getElementById('content2').style.display = 'none';
+});
 
 function mostrar_ocultar(id) {
     var elemento = document.getElementById(id);
