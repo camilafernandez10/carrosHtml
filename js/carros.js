@@ -80,6 +80,8 @@ var app = new Vue({
         traccion: null,
         frenos: null,
         seguridad: null,
+        coment: null,
+
         url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
     },
     methods: {
@@ -92,23 +94,24 @@ var app = new Vue({
                 .catch(error => console.error(error));
         },
         volver: function () {
-            this.datos= null;
-            this.caract= null
-            this.motor= null
-            this.color= null
-            this.cilindraje= null
-            this.potencia= null
-            this.fullequipo=null
-            this.traccion= null
-            this.frenos= null
-            this.seguridad=null
+            this.datos = null;
+            this.caract = null
+            this.motor = null
+            this.color = null
+            this.cilindraje = null
+            this.potencia = null
+            this.fullequipo = null
+            this.traccion = null
+            this.frenos = null
+            this.seguridad = null
+            this.coment = null
         },
 
         mostrar: function () {
             document.getElementById('content2').style.display = 'block';
             document.getElementById('content1').style.display = 'none';
             document.getElementById('content3').style.display = 'none';
-    
+
             axios.get(this.url + 'caract')
                 .then(response => {
                     this.caract = response.data.caract;
@@ -128,7 +131,23 @@ var app = new Vue({
                     }
                 })
                 .catch(error => console.error(error));
-        }
+        },
+        getTest() {
+
+        },
+        TestDrive() {
+            const path = this.url + 'test';
+            const datos = {
+                coment: this.coment,
+            };
+            axios.post(path, datos)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        },
     },
     created() {
         this.f();
