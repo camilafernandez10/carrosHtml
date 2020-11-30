@@ -38,12 +38,12 @@
                 <label class="item EstiloSweet">Camila y Miguel SAS</label>
             </div>
         </div>
-    </br></br>   </br></br>   </br></br>   </br></br>
+        </br></br> </br></br> </br></br> </br></br>
         <div id="content1" class="ui grid">
             <div class="one wide column">
             </div>
             <div class="fourteen wide black column">
-                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="mostrar" >
+                <div id="tarjetasCarros" class="ui three stackable cards" v-on:click="mostrar">
                 </div>
             </div>
         </div>
@@ -51,35 +51,26 @@
         <div id="content2" class="ui grid">
             <div id="botones" class="seven ui buttons">
                 </br>
-                <button id="btnVentilacion" class="ui inverted black button">Motor</button>
-                <button id="btnNum_Computadores" class="ui inverted black button">Cantidad de Computadores</button>
-                <button id="btnProyector" class="ui inverted black button">Proyector</button>
-                <button id="btnTelevisor" class="ui inverted black button">Televisor</button>
-                <button id="btnToma_Corriente" class="ui inverted black button">Toma Corriente</button>
-                <button id="btnTablero" class="ui inverted black button">Tablero</button>
-                <button id="btnSilla" class="ui inverted black button">Sillas</button>
+                <button id="btnMotor" class="ui inverted black button">Motor</button>
+                <button id="btnColor" class="ui inverted black button">Color</button>
+                <button id="btnCilindraje" class="ui inverted black button">Cilindraje</button>
+                <button id="btnPotencia" class="ui inverted black button">Potencia</button>
+                <button id="btnFull" class="ui inverted black button">Full Equipo</button>
+                <button id="btnTraccion" class="ui inverted black button">Traccion</button>
+                <button id="btnFrenos" class="ui inverted black button">Frenos</button>
+                <button id="btnSeguridad" class="ui inverted black button">Seguridad</button>
                 </button>
             </div>
         </div>
         <div class="caracteristicas">
-            <div id="ventilacion"></div>
-            <div id="num_computadores">
-            </div>
-            <div id="proyector">
-
-            </div>
-            <div id="televisor">
-
-            </div>
-            <div id="toma_corriente">
-
-            </div>
-            <div id="tablero">
-
-            </div>
-            <div id="silla">
-
-            </div>
+            <div id="motor">{{motor}}</div>
+            <div id="color">{{color}}</div>
+            <div id="cilindraje">{{cilindraje}}</div>
+            <div id="potencia">{{potenica}}</div>
+            <div id="fullequipo">{{fullequipo}}</div>
+            <div id="traccion">{{traccion}}</div>
+            <div id="frenos">{{frenos}}</div>
+            <div id="seguridad">{{seguridad}}</div>
         </div>
         <div id="tablaSalones">
             <h1>Horario del salon</h1>
@@ -89,6 +80,7 @@
             </table>
         </div>
     </div>
+    </div>
 
 
     </div>
@@ -97,12 +89,26 @@
 <script>
     document.getElementById('content2').style.display = 'none';
     var idcar;
+    $("#btnMotor").click(function () {
+        mostrar_ocultar('motor');
+        $('#color').hide(); $('#cilindraje').hide(); $('#potencia').hide();
+        $('#fullequipo').hide(); $('#traccion').hide(); $('#frenos').hide(); $('#seguridad').hide();
+
+    });
+
     var app = new Vue({
         el: '#app',
         data: {
             datos: null,
             caract: null,
             motor: null,
+            color: null,
+            cilindraje: null,
+            potencia: null,
+            fullequipo: null,
+            traccion: null,
+            frenos: null,
+            seguridad: null,
             url: 'http://ec2-54-237-54-201.compute-1.amazonaws.com:5000/'
         },
         methods: {
@@ -114,8 +120,8 @@
                     })
                     .catch(error => console.error(error));
             },
-            
-            mostrar:function() {
+
+            mostrar: function () {
                 document.getElementById('content2').style.display = 'block';
                 document.getElementById('content1').style.display = 'none';
                 axios.get(this.url + 'caract')
@@ -126,12 +132,20 @@
                         for (var i = 0; i < this.caract.length; i++) {
                             if (parseInt(this.caract[i].id) === parseInt(idcar)) {
                                 this.motor = this.caract[i].motor
+                                this.color = this.caract[i].color
+                                this.cilindraje = this.caract[i].cilindraje
+                                this.potencia = this.caract[i].potencia
+                                this.fullequipo = this.caract[i].fullequipo
+                                this.traccion = this.caract[i].traccion
+                                this.frenos = this.caract[i].frenos
+                                this.seguridad = this.caract[i].seguridad
                             }
                         }
                         console.log(this.motor);
+                        console.log(this.color);
                     })
                     .catch(error => console.error(error));
-              
+
             }
         },
         created() {
@@ -142,6 +156,19 @@
         idcar = $(this).prop("id");
         console.log(idcar)
     });
+
+    function mostrar_ocultar(id) {
+        var elemento = document.getElementById(id);
+        if (!elemento) {
+            return true;
+        }
+        if (elemento.style.display == "none") {
+            elemento.style.display = "block"
+        } else {
+            elemento.style.display = "none"
+        };
+        return true;
+    };
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
 <script type="text/javascript" src="js/carros.js"></script>
