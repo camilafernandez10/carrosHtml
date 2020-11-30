@@ -89,13 +89,6 @@
 <script>
     document.getElementById('content2').style.display = 'none';
     var idcar;
-    $("#btnMotor").click(function () {
-        mostrar_ocultar('motor');
-        $('#color').hide(); $('#cilindraje').hide(); $('#potencia').hide();
-        $('#fullequipo').hide(); $('#traccion').hide(); $('#frenos').hide(); $('#seguridad').hide();
-
-    });
-
     var app = new Vue({
         el: '#app',
         data: {
@@ -157,21 +150,10 @@
         console.log(idcar)
     });
 
-    function mostrar_ocultar(id) {
-        var elemento = document.getElementById(id);
-        if (!elemento) {
-            return true;
-        }
-        if (elemento.style.display == "none") {
-            elemento.style.display = "block"
-        } else {
-            elemento.style.display = "none"
-        };
-        return true;
-    };
 </script>
 <script type="text/javascript" src="js/marcas.js"></script>
 <script type="text/javascript" src="js/carros.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
 <script type="text/javascript" src="js/semantic.min.js"></script>
 
 </html>
