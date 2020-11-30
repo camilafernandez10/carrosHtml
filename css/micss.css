@@ -52,8 +52,8 @@ opacity: 95%;
 	width: 25%;
 	color: white;
 	float: right;
-	margin-top: 15%;
-	margin-left: 60%;
+	margin-top: 10%;
+	margin-left: 50%;
 	position: absolute;
 }
 #content2{
@@ -61,6 +61,14 @@ opacity: 95%;
 	font-size: large;
 	font-style: normal;
   	font-weight: 600;
+	color: white;
+}
+
+#titulo{
+	font-family: 'PT Sans', sans-serif;
+	font-size: large;
+	font-style: normal;
+  	font-weight: 800;
 	color: white;
 }
 
