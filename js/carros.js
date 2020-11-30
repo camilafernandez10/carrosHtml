@@ -151,7 +151,12 @@ var app = new Vue({
             const path = this.url + 'test';
             if (!this.idCliente) {
                 alert('La cedula es obligatoria');
+            }else if (!this.hora){
+                alert('La hora es obligatoria');
+            }else if(!this.fecha){
+                alert('La fecha es obligatoria');
             }else{
+                        
             const datos = {
                 idCliente: this.idCliente,
                 idCarro: this.idCarro,
