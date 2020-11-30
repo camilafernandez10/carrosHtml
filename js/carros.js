@@ -144,7 +144,15 @@ $("#tarjetasCarros").on("click", ".link.card", function () {
         }
     }
 });
-
+$("#btnReservar").click(function () {
+    document.getElementById('content3').style.display = 'block';
+    document.getElementById('content2').style.display = 'none';
+    for (var i = 0; i < carros.length; i++) {
+        if (parseInt(carros[i].id) === parseInt(idcar)) {
+            colocarCard2(carros[i]);
+        }
+    }
+});
 function colocarCard2(carro) {
     var texto = '<div id=' + carro.id + ' class="ui link card product">' +
         '<div class="image">' +
