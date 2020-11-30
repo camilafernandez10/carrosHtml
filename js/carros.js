@@ -165,10 +165,15 @@ var app = new Vue({
                     let termino2 = "Duplicate";
                     let posicion = this.rta.indexOf(termino);
                     let posicion2 = this.rta.indexOf(termino2);
-                    if (posicion !== -1)
+                    if (posicion !== -1){
                         this.rta = "El dato de la cedula no es correcto"
-                    if (posicion2 !== -1)
+                    }
+                    if (posicion2 !== -1){
                         this.rta = "Ya tiene agendada una cita con su cedula"
+                    }
+                    if(this.rta === "None"){
+                        this.rta = "Su test drive ha sido agendado correctamente"
+                    }
                 })
                 .catch((error) => {
                     console.error(error);
