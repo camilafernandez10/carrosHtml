@@ -1,3 +1,13 @@
+document.getElementById('motor').style.display = 'none';
+document.getElementById('color').style.display = 'none';
+document.getElementById('cilindraje').style.display = 'none';
+document.getElementById('potencia').style.display = 'none';
+document.getElementById('fullequipo').style.display = 'none';
+document.getElementById('traccion').style.display = 'none';
+document.getElementById('frenos').style.display = 'none';
+document.getElementById('seguridad').style.display = 'none';
+
+
 $("#btnMotor").click(function () {
     mostrar_ocultar('motor');
     $('#color').hide(); $('#cilindraje').hide(); $('#potencia').hide();
