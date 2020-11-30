@@ -106,6 +106,7 @@ var app = new Vue({
         mostrar: function () {
             document.getElementById('content2').style.display = 'block';
             document.getElementById('content1').style.display = 'none';
+            document.getElementById('content3').style.display = 'none';
     
             axios.get(this.url + 'caract')
                 .then(response => {
