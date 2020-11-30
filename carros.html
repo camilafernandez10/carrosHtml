@@ -47,71 +47,42 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="content2" class="ui grid">
-            <div class="one wide column"> </div>
-            <div class="fourteen wide black column">
+            <div id="titulo" align='center'>
+                Caracteristicas del vehiculo
+            </div>
+            </br> </br>
+            <div id="botones" class="seven ui buttons">
+                </br>
+                <button id="btnMotor" class="ui inverted black button">Motor</button>
+                <button id="btnColor" class="ui inverted black button">Color</button>
+                <button id="btnCilindraje" class="ui inverted black button">Cilindraje</button>
+                <button id="btnPotencia" class="ui inverted black button">Potencia</button>
+                <button id="btnFull" class="ui inverted black button">Full Equipo</button>
+                <button id="btnTraccion" class="ui inverted black button">Traccion</button>
+                <button id="btnFrenos" class="ui inverted black button">Frenos</button>
+                <button id="btnSeguridad" class="ui inverted black button">Seguridad</button>
+                </button>
+            </div>
+            </br> </br>
+            <div id="tablaCarros">
+                <div class="caracteristicas">
+                    <div id="motor">Motor: {{motor}}</div>
+                    <div id="color">Zona Cromatica: {{color}}</div>
+                    <div id="cilindraje">Cilindraje: {{cilindraje}}</div>
+                    <div id="potencia">Potencia: {{potencia}}</div>
+                    <div id="fullequipo">Carro Full-Equipo: {{fullequipo}}</div>
+                    <div id="traccion">Traccion: {{traccion}}</div>
+                    <div id="frenos">Frenos: {{frenos}}</div>
+                    <div id="seguridad">Seguridad: {{seguridad}}</div>
+                </div>
+            </br>
                 <div id="titulo" align='center'>
-                    Caracteristicas del vehiculo
+                    Vehiculo
                 </div>
-                </br> </br>
-                <div id="botones" class="seven ui buttons">
-                    </br>
-                    <button id="btnMotor" class="ui inverted black button">Motor</button>
-                    <button id="btnColor" class="ui inverted black button">Color</button>
-                    <button id="btnCilindraje" class="ui inverted black button">Cilindraje</button>
-                    <button id="btnPotencia" class="ui inverted black button">Potencia</button>
-                    <button id="btnFull" class="ui inverted black button">Full Equipo</button>
-                    <button id="btnTraccion" class="ui inverted black button">Traccion</button>
-                    <button id="btnFrenos" class="ui inverted black button">Frenos</button>
-                    <button id="btnSeguridad" class="ui inverted black button">Seguridad</button>
-                    </button>
-                </div>
-                </br> </br>
-                <div id="tablaCarros">
-                    <div class="caracteristicas">
-                        <div id="motor">Motor: {{motor}}</div>
-                        <div id="color">Zona Cromatica: {{color}}</div>
-                        <div id="cilindraje">Cilindraje: {{cilindraje}}</div>
-                        <div id="potencia">Potencia: {{potencia}}</div>
-                        <div id="fullequipo">Carro Full-Equipo: {{fullequipo}}</div>
-                        <div id="traccion">Traccion: {{traccion}}</div>
-                        <div id="frenos">Frenos: {{frenos}}</div>
-                        <div id="seguridad">Seguridad: {{seguridad}}</div>
-                    </div>
-                    </br>
-                    <div id="titulo" align='center'>
-                        Vehiculo
-                    </div>
-                    </br>
-                    <div id="tarjetaCarro" class="ui three stackable cards"></div>
-                </div>
-                <br><br><br><br><br><br><br><br><br><br>
-                <footer>
-
-                    Síguenos en redes sociales:
-                    <button class="ui facebook button">
-                        <i class="facebook icon"></i>
-                        Facebook
-                    </button>
-                    <button class="ui instagram button">
-                        <i class="instagram icon"></i>
-                        Instagram
-                    </button>
-                    <button class="ui youtube button">
-                        <i class="youtube icon"></i>
-                        YouTube
-                    </button>
-                    <button class="ui twitter button">
-                        <i class="twitter icon"></i>
-                        Twitter
-                    </button>
-                    <button class="ui yellow snapchat button">
-                        <i class="snapchat icon"></i>
-                        Snapchat
-                    </button>
-
-                </footer>
+                </br>
+                <div id="tarjetaCarro" class="ui three stackable cards"></div>
             </div>
         </div>
     </div>
