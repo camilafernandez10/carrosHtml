@@ -149,6 +149,9 @@ var app = new Vue({
         TestDrive() {
             this.idCarro = idcar;
             const path = this.url + 'test';
+            if (!this.idCliente) {
+                alert('La cedula es obligatoria');
+            }else{
             const datos = {
                 idCliente: this.idCliente,
                 idCarro: this.idCarro,
@@ -178,6 +181,7 @@ var app = new Vue({
                 .catch((error) => {
                     console.error(error);
                 });
+            }
         },
     },
     created() {
