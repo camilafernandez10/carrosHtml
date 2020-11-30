@@ -142,6 +142,7 @@ var app = new Vue({
 
         },
         TestDrive() {
+            this.idCarro= idcar;
             const path = this.url + 'test';
             const datos = {
                 idCliente:this.idCliente,
