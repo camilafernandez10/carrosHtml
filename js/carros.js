@@ -79,7 +79,7 @@ var app = new Vue({
         traccion: null,
         frenos: null,
         seguridad: null,
-        url: 'http://ec2-54-237-54-201.compute-1.amazonaws.com:5000/'
+        url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
     },
     methods: {
 
