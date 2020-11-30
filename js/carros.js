@@ -80,12 +80,12 @@ var app = new Vue({
         traccion: null,
         frenos: null,
         seguridad: null,
-        hora:null,
-        fecha:null,
+        hora: null,
+        fecha: null,
         coment: null,
-        idCliente : null,
-        rta:null,
-        idCarro : idcar,
+        idCliente: null,
+        rta: null,
+        idCarro: idcar,
         url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
     },
     methods: {
@@ -108,14 +108,14 @@ var app = new Vue({
             this.traccion = null
             this.frenos = null
             this.seguridad = null
-            this.idCliente=null
-            this.hora=null
-            this.fecha=null
+            this.idCliente = null
+            this.hora = null
+            this.fecha = null
             this.coment = null
-            this.rta=null
+            this.rta = null
         },
-        volver2:function(){
-            this.rta=null
+        volver2: function () {
+            this.rta = null
         },
 
         mostrar: function () {
@@ -147,13 +147,13 @@ var app = new Vue({
 
         },
         TestDrive() {
-            this.idCarro= idcar;
+            this.idCarro = idcar;
             const path = this.url + 'test';
             const datos = {
-                idCliente:this.idCliente,
-                idCarro:this.idCarro,
-                hora:this.hora,
-                fecha:this.fecha,
+                idCliente: this.idCliente,
+                idCarro: this.idCarro,
+                hora: this.hora,
+                fecha: this.fecha,
                 coment: this.coment,
             };
             axios.post(path, datos)
@@ -161,6 +161,12 @@ var app = new Vue({
                     console.log(response.data);
                     this.rta = response.data.message
                     console.log(this.rta)
+                    let cadena = "Este Era Un Gato Con Los Pies De Trapo";
+                    let termino = "integer";
+                    let posicion = cadena.indexOf(termino);
+                    if (posicion !== -1)
+                        this.rta = "El dato de la cedula no es correcto"
+                        
                 })
                 .catch((error) => {
                     console.error(error);
