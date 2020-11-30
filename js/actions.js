@@ -6,7 +6,7 @@ document.getElementById('fullequipo').style.display = 'none';
 document.getElementById('traccion').style.display = 'none';
 document.getElementById('frenos').style.display = 'none';
 document.getElementById('seguridad').style.display = 'none';
-
+document.getElementById('tarjetaCarro').style.display = 'none';
 
 
 $("#btnMotor").click(function () {
@@ -53,7 +53,7 @@ $("#btnSeguridad").click(function () {
 $("#btnVolver").click(function () {
     document.getElementById('content1').style.display = 'block';
     document.getElementById('content2').style.display = 'none';
-    document.getElementById('tarjetaCarro').style.display = 'none';
+    $('#tarjetaCarro').empty();
 });
 
 function mostrar_ocultar(id) {
