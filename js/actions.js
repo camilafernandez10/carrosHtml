@@ -53,6 +53,13 @@ $("#btnSeguridad").click(function () {
 $("#btnVolver").click(function () {
     document.getElementById('content1').style.display = 'block';
     document.getElementById('content2').style.display = 'none';
+    document.getElementById('content3').style.display = 'none';
+    $('#tarjetaCarro').empty();
+});
+$("#btnReservar").click(function () {
+    document.getElementById('content3').style.display = 'block';
+    document.getElementById('content2').style.display = 'none';
+    document.getElementById('content1').style.display = 'none';
     $('#tarjetaCarro').empty();
 });
 
