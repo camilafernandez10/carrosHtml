@@ -65,10 +65,12 @@ opacity: 95%;
 }
 
 #tablaCarros { 
+	background-color: rgb(30, 0, 31); 
+	opacity: 90%;
 	border: 2px solid #000000; 
 	border-collapse: collapse; 
 	margin: auto; 
-    width: 80%; 
+    width: 90%; 
 }
 table{
 	opacity: 100%;
