@@ -86,7 +86,7 @@ var app = new Vue({
         idCliente: null,
         rta: null,
         idCarro: idcar,
-        url: 'http://ec2-35-174-207-125.compute-1.amazonaws.com:5000/'
+        url: 'http://ec2-54-237-24-162.compute-1.amazonaws.com:5000/'
     },
     methods: {
 
